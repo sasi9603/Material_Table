@@ -1,0 +1,46 @@
+
+
+  <div class="container mt-4">
+
+
+
+
+
+	
+	 <input type="text" placeholder="Type a number or string">
+<table id="employees" >
+	<tr>
+		<th>Week_High</th>
+		<th>Week_Low</th>
+		<th>Dividend_Yield</th>
+		<th>EBITDA</th>
+		<th>EarningsShare</th>
+		<th>Market_Cap</th>
+		<th>Name</th>
+		<th>Price</th>
+		<th>PriceBook</th>
+		<th>PriceEarnings</th>
+		<th>PriceSales</th>
+		<th>SEC_Filings</th>
+		<th>Sector</th>
+		<th>Symbol</th>
+	</tr>
+	<tr *ngFor="let employee of employeeData.employees">
+		<td>{{employee.Week_High}}</td>
+		<td>{{employee.Week_Low}}</td>
+		<td>{{employee.Dividend_Yield}}</td>
+		<td>{{employee.EBITDA}}</td>
+		<td>{{employee.EarningsShare}}</td>
+		<td>{{employee.Market_Cap}}</td>
+		<td>{{employee.Name}}</td>
+		<td>{{employee.Price}}</td>
+		<td>{{employee.PriceBook}}</td>
+		<td>{{employee.PriceEarnings}}</td>
+		<td>{{employee.PriceSales}}</td>
+		<td>{{employee.SEC_Filings}}</td>
+		<td>{{employee.Sector}}</td>
+		<td>{{employee.Symbol}}</td>
+
+	</tr>
+</table>
+</div>

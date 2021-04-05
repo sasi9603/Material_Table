@@ -1,0 +1,42 @@
+
+
+
+  
+   
+     <div class="example-header">
+        <mat-form-field>
+          <mat-label>Filter</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+        </mat-form-field>
+    
+
+
+<select>
+  <option *ngFor="let selected of selectedColumns">{{selected}}</option>
+  
+</select>
+
+     </div>
+
+
+      
+       
+<mat-table #table [dataSource]="dataSource" 
+       cdkDropList 
+       cdkDropListOrientation="horizontal"
+      (cdkDropListDropped)="tableDrop($event)"
+     matSort>
+    <ng-container [matColumnDef]="columnName" *ngFor="let columnName of displayedColumns">
+      <mat-header-cell *matHeaderCellDef  cdkDrag cdkDragLockAxis="x" 
+      cdkDragBoundary="mat-header-row" mat-sort-header> {{columnName}} </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element[columnName]}} </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns" ></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"class="table-hover"></mat-row>
+  </mat-table>
+
+
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+

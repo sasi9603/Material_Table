@@ -1,0 +1,105 @@
+ /* .left-card{
+
+    padding: 19px;
+    
+    height: 450px;
+    margin-top: 30px;
+}  */
+ /* .middle-card{
+    margin-top: 30px;
+    width: 100%;
+}  */
+/* .right-card{
+    padding: 19px;
+    height: 450px;
+    margin-top: 20px;
+
+}  */
+.sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+      
+    transition: 0.5s;
+     /* 0.5 second transition effect to slide in the sidebar */
+  }
+  
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color:white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s; /* If you want a transition effect */
+    
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+   
+
+    .sidebar a {font-size: 18px;}
+  }
+  /* .row {
+    display: block;
+    
+    width: 100%;
+    overflow: scroll;
+  } */
+  .right-sidebar{
+    z-index: 1000;
+    position: absolute;
+    right: 250px;
+    width: 0;
+    height: 100%;
+    margin-right: -250px;
+    overflow-y: auto;
+    background: #222;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  #main-right{
+    padding-right: 250px;
+
+  }
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    margin-right: 50px;
+  }
+  ul{
+    list-style: none;
+    font-size: 20px;
+    line-height: 30px;
+  }

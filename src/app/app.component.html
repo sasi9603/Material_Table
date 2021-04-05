@@ -1,0 +1,40 @@
+       <nav class=" text-center bg-secondary" style="height:50px; color: white; padding-top: 10px;" >
+        <h1>FocusIT Angular Material Table </h1> 
+        </nav> 
+        <div class="row ">
+          <div class="col-md-1">
+                  
+        
+          </div>
+          <div class="col-md-10">
+                   <app-json-table></app-json-table>
+      </div>
+            <div class="col-md-1 " >
+              <div id="my-rightbar" class="right-sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNavRight()">x</a>
+               
+             
+              <h1 style="color: green;">Here Column Filter</h1>
+                <ul style="color: white;" >
+                  
+               
+               
+                  <li *ngFor="let columnName of displayedColumns" >
+                   
+                 <input type="checkbox" name="hello" id="heloe">{{columnName}}
+
+
+                  </li>
+            
+                </ul>
+                
+            </div>
+            <div id="main-right">
+               <button class="openbtn" onclick="openNavRight()">☰ </button> 
+               
+              
+       </div>
+                 </div>
+      </div> 
+
+      

@@ -1,0 +1,110 @@
+<!-- table filtering method start -->
+<div class="example-container mat-elevation-z8">
+ <mat-form-field>
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+  </mat-form-field>  
+ 
+<!-- table filtering method end -->
+ <!-- material table start -->
+ <div class="row m-0">
+  <table mat-table [dataSource]="dataSource"  matSort class="mat-elevation-z8">
+     
+    <ng-container matColumnDef="Week_High">
+    
+      <th mat-header-cell *matHeaderCellDef  mat-sort-header > Week_High 
+    </th>
+     <td mat-cell *matCellDef="let element of table"> {{element.Week_High}} </td> 
+    </ng-container>
+      
+  <!-- week low coloumn -->
+    <ng-container matColumnDef="Week_Low">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Week_Low
+      </th>
+    
+      <td mat-cell *matCellDef="let element of table"> {{element.Week_Low}} </td>
+    </ng-container>
+  <!-- dividend yield coloumn -->
+    <ng-container matColumnDef="Dividend_Yield">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Dividend_Yield
+         </th>
+      <td mat-cell *matCellDef="let element of table"> {{element.Dividend_Yield}} </td>
+    </ng-container>
+  <!-- ebitda coloumn -->
+    <ng-container matColumnDef="EBITDA">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> EBITDA  
+      </th>
+      <td mat-cell *matCellDef="let element of table"> {{element.EBITDA}} </td>
+    </ng-container>
+  <!-- EarningsShare coloumn -->
+    <ng-container matColumnDef="EarningsShare">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> EarningsShare
+        </th>
+      <td mat-cell *matCellDef="let element of table"> {{element.EarningsShare}} </td>
+    </ng-container>
+  <!-- Market cap coloumn -->
+     <ng-container matColumnDef="Market_Cap">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Market_Cap
+        </th>
+      <td mat-cell *matCellDef="let element of table"> {{element.Market_Cap}} </td>
+    </ng-container>
+  <!-- Name coloumn -->
+     <ng-container matColumnDef="Name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name 
+       
+      </th>
+      <td mat-cell *matCellDef="let element of table"> {{element.Name}} </td>
+    </ng-container> 
+  <!-- Price coloumn -->
+     <ng-container matColumnDef="Price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Price 
+      </th>
+      <td mat-cell *matCellDef="let element of table"> {{element.Price}} 
+   </td>
+    </ng-container> 
+  <!-- Price Book coloumn -->
+     <ng-container matColumnDef="PriceBook">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> PriceBook 
+     </th>
+      <td mat-cell *matCellDef="let element of table"> {{element.PriceBook}} </td>
+    </ng-container> 
+  <!-- PriceEarnings coloumn -->
+     <ng-container matColumnDef="PriceEarnings">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> PriceEarnings 
+   </th>
+      <td mat-cell *matCellDef="let element of table "> {{element.PriceEarnings}} </td>
+    </ng-container> 
+  <!-- PriceSales coloumn -->
+     <ng-container matColumnDef="PriceSales">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> PriceSales
+        </th>
+      <td mat-cell *matCellDef="let element of  table"> {{element.PriceSales}} </td>
+    </ng-container> 
+  <!-- SEC Filings coloumn -->
+    <ng-container matColumnDef="SEC_Filings">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> SEC_Filings
+         </th>
+      <td mat-cell *matCellDef="let element of table "> {{element.SEC_Filings}} </td>
+    </ng-container> 
+  <!-- Sector coloumn -->
+    <ng-container matColumnDef="Sector">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Sector
+         </th>
+      <td mat-cell *matCellDef="let element of table "> {{element.Sector}} </td>
+    </ng-container> 
+  <!-- Symbol coloumn -->
+  <ng-container matColumnDef="Symbol">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="p-0"> Symbol
+ </th>
+      <td mat-cell *matCellDef="let element of table"> {{element.Symbol}} </td>
+    </ng-container> 
+<!-- Rendering in the coloumns i the tabe   -->
+    <tr mat-header-row *matHeaderRowDef="getDisplayColumns();"></tr>
+    <tr mat-row *matRowDef="let row; columns: getDisplayColumns();"></tr>
+  </table>
+ <!-- material table end -->
+
+</div>
+ <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+<!-- material table pagination -->
+

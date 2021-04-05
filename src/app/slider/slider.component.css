@@ -1,0 +1,21 @@
+.box-opener {
+    cursor: pointer;
+}
+
+.box {
+    background-color: #FFCC55;
+    max-height: 0px;
+    width: 250px;
+    overflow-x: hidden;
+    transition: ease-in-out 400ms max-height;
+}
+
+.box.opened {
+    max-height: 500px;
+    
+    transition: ease-in-out 600ms max-height;
+}
+
+.content {
+    padding: 16px;
+}

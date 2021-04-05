@@ -1,0 +1,52 @@
+
+  <nav class=" text-center bg-secondary" style="height:50px; color: white; padding-top: 10px;" >
+    <h1>FocusIT Angular Material Table </h1> 
+
+  </nav> 
+   <div class="row">
+     <div class="col-md-2">
+      
+      
+     </div>
+   
+
+
+<div class="col-md-8">
+  <div class="example-header">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+    </mat-form-field>
+  </div>
+
+<mat-table cdkDropList 
+           cdkDropListOrientation="horizontal"
+           (cdkDropListDropped)="tableDrop($event)"
+           [dataSource]="dataSource"  matSort>
+
+  <ng-container *ngFor="let column of columns; let i = index"
+                [matColumnDef]="column.name">
+
+    <mat-header-cell *matHeaderCellDef cdkDrag cdkDragLockAxis="x" 
+    cdkDragBoundary="mat-header-row" mat-sort-header>
+      {{ column.title }}
+    </mat-header-cell>
+
+    <mat-cell *matCellDef="let element">{{ element[column.name] }}</mat-cell>
+
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"
+                  class="tableHeaderRow"
+                  #tableHeaderRow></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+<div class="col-md-2">
+  <h1>hello</h1>
+</div>
+</div>
+
+
